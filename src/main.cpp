@@ -37,7 +37,7 @@ void testdrawstyles(void) {
   display.println("TEXT"); 
    display.setCursor(85, 57);
    display.setTextSize(1); 
-   display.println("by OLi"); 
+   display.println("by ME"); 
 
  
 
