@@ -35,15 +35,20 @@ void testdrawstyles(void) {
   display.println("STUPID"); 
   display.setCursor(45, 40);
   display.println("TEXT"); 
-   display.setCursor(85, 57);
-   display.setTextSize(1); 
-   display.println("by ME"); 
-
- 
-
+  display.setCursor(85, 57);
+  display.setTextSize(1); 
+  display.println("by ME"); 
   display.display();
   delay(2000);
 }
+
+int inmultire(int x, int y){
+  int rezultat;
+  rezultat=x * y;
+  return rezultat; 
+}
+
+
 
 void setup() {
   Serial.begin(115200);
@@ -57,14 +62,26 @@ void setup() {
   // Show initial display buffer contents on the screen --
   // the library initializes this with an Adafruit splash screen.
   display.display();
-  delay(2000); // Pause for 2 seconds
-
-  // Clear the buffer
-  display.clearDisplay();
   
-testdrawstyles();
 
+  
+ 
+ display.clearDisplay();
 }
-
 void loop() {
+ int i=2;
+ int j=5;
+ int k;
+  for (i = 0; i < 10; i++){
+    k=inmultire(i,j);
+  display.clearDisplay();
+  display.setTextSize(2);            
+  display.setTextColor(WHITE);
+  display.setCursor(30, 10);
+  display.println(k);
+  display.display();
+ delay(500);
+  }
+ 
+
 }
