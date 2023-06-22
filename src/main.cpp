@@ -1,8 +1,3 @@
-#include <Arduino.h>
-#include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
-
 
 
 /*********
@@ -13,7 +8,7 @@
   Adafruit invests time and resources providing this open source code, please support Adafruit and open-source hardware by purchasing products from Adafruit!
   Written by Limor Fried/Ladyada for Adafruit Industries, with contributions from the open source community. BSD license, check license.txt for more information All text above, and the splash screen below must be included in any redistribution. 
 *********/
-
+#include <Arduino.h>
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -30,8 +25,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
   int j=5;
   int k;
   
-
-  void drawlines(void){
+ /* void drawlines(void){
     
    
     display.drawLine(0,32,64,32, WHITE);
@@ -53,7 +47,7 @@ void testdrawstyles(void) {
   display.println("by ME"); 
   display.display();
   
-}
+}*/
 
 int inmultire(int x, int y){
   int rezultat;
@@ -75,7 +69,7 @@ void setup() {
   // the library initializes this with an Adafruit splash screen.
   display.display();   
   display.clearDisplay();
-  testdrawstyles();
+  
   
 
 }
