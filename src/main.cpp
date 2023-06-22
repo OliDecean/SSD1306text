@@ -26,9 +26,22 @@
 #define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-void testdrawstyles(void) {
-  display.clearDisplay();
+  int i=2;
+  int j=5;
+  int k;
+  
 
+  void drawlines(void){
+    
+   
+    display.drawLine(0,32,64,32, WHITE);
+    display.display();
+    
+  }
+  
+
+void testdrawstyles(void) {
+  
   display.setTextSize(2);             // Draw 2X-scale text
   display.setTextColor(WHITE);
   display.setCursor(30, 10);
@@ -39,7 +52,7 @@ void testdrawstyles(void) {
   display.setTextSize(1); 
   display.println("by ME"); 
   display.display();
-  delay(2000);
+  
 }
 
 int inmultire(int x, int y){
@@ -58,20 +71,18 @@ void setup() {
     Serial.println(F("SSD1306 allocation failed"));
     for(;;); // Don't proceed, loop forever
   }
-
   // Show initial display buffer contents on the screen --
   // the library initializes this with an Adafruit splash screen.
-  display.display();
+  display.display();   
+  display.clearDisplay();
+  testdrawstyles();
   
 
-  
- 
- display.clearDisplay();
 }
 void loop() {
- int i=2;
- int j=5;
- int k;
+int flag=0;
+while(flag==0)
+{
   for (i = 0; i < 10; i++){
     k=inmultire(i,j);
   display.clearDisplay();
@@ -81,7 +92,8 @@ void loop() {
   display.println(k);
   display.display();
  delay(500);
-  }
  
+  }
+  }
 
 }
